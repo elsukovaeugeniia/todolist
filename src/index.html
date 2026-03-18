@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корпоративная система управления задачами</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="board" id="board">
+        <!-- Колонка 1: To Do -->
+        <div class="column" data-column-id="1">
+            <div class="column-header">To Do</div>
+            <div class="card-list" id="column-1"></div>
+            <div class="add-card-btn" onclick="addCard(1)">+ Add another card</div>
+        </div>
+
+        <!-- Колонка 2: In Progress -->
+        <div class="column" data-column-id="2">
+            <div class="column-header">In Progress</div>
+            <div class="card-list" id="column-2"></div>
+            <div class="add-card-btn" onclick="addCard(2)">+ Add another card</div>
+        </div>
+
+        <!-- Колонка 3: Done -->
+        <div class="column" data-column-id="3">
+            <div class="column-header">Done</div>
+            <div class="card-list" id="column-3"></div>
+            <div class="add-card-btn" onclick="addCard(3)">+ Add another card</div>
+        </div>
+    </div>
+
+    <script src="/src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+.board {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.column {
+    background: #ebecf0;
+    border-radius: 3px;
+    min-width: 270px;
+    max-width: 270px;
+}
+
+.column-header {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.card-list {
+    min-height: 100px;
+    padding: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: grab;
+    position: relative;
+}
+
+.card:hover .delete-btn {
+    display: block;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-card-btn {
+    padding: 10px;
+    text-align: center;
+    color: #6b7780;
+    cursor: pointer;
+}
+
+.add-card-btn:hover {
+    color: #0079bf;
+}
+
+.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.drop-zone {
+    background-color: rgba(0, 121, 191, 0.1);
+    border: 2px dashed #0079bf;
+    height: 40px;
+    margin: 5px 0;
+    text-align: center;
+    line-height: 40px;
+}
