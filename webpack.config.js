@@ -5,14 +5,13 @@ module.exports = {
   entry: './src/script.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.[contenthash].js',
-    clean: true
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'] // для разработки
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -27,8 +26,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
-  ],
-  resolve: {
-    extensions: ['.js']
-  }
+  ]
 };
+
