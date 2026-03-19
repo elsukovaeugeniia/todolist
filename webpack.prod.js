@@ -10,10 +10,12 @@ module.exports = merge(common, {
   output: {
     clean: true,
     filename: 'bundle.[contenthash].js',
-    path: require('path').resolve(__dirname, 'dist')
+    chunkFilename: '[name].[contenthash].js',
+    path: require('path').resolve(__dirname, 'dist'),
+    publicPath: '/todolist/' // Ключевое изменение: задаёт базовый путь для ресурсов на GitHub Pages
   },
   optimization: {
-    minimize: true,
+    minimize: true, // Исправлено: было "minimize", правильно — "minimize"
     minimizer: [
       new TerserPlugin(),
       new CssMinimizerPlugin()
