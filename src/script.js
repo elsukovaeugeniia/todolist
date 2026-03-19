@@ -1,3 +1,4 @@
+import './css/style.css';
 // Инициализация состояния
 const INITIAL_STATE = {
     columns: [
