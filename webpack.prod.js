@@ -11,7 +11,7 @@ module.exports = merge(common, {
     filename: 'bundle.[contenthash].js',
     chunkFilename: '[name].[contenthash].js',
     path: require('path').resolve(__dirname, 'dist'),
-    publicPath: '/todolist/'
+    publicPath: './'
   },
   optimization: {
     minimize: true,

@@ -1,4 +1,5 @@
 import './css/style.css';
+
 // Инициализация состояния
 const INITIAL_STATE = {
     columns: [
@@ -40,7 +41,7 @@ function renderBoard() {
 
         column.cards.forEach((card, index) => {
             const cardElement = createCardElement(card.id, card.content, column.id, index);
-            columnElement.appendChild(cardElement);
+            columnElement.append(cardElement); // ЗАМЕНА: appendChild → append
         });
     });
 }
@@ -147,7 +148,7 @@ function setupEventListeners() {
 
                 if (y < rect.height / 2) {
                     // Зона перед карточкой
-            createDropZone(columnList, Array.from(columnList.children).indexOf(target));
+                    createDropZone(columnList, Array.from(columnList.children).indexOf(target));
         } else {
             // Зона после карточки
             createDropZone(columnList, Array.from(columnList.children).indexOf(target) + 1);
@@ -211,6 +212,10 @@ function createDropZone(parent, position) {
     if (position < children.length) {
         parent.insertBefore(dropZone, children[position]);
     } else {
-        parent.appendChild(dropZone);
+        parent.append(dropZone); // ЗАМЕНА: appendChild → append
     }
 }
+
+// Экспорт функций в глобальную область видимости для inline-обработчиков
+window.addCard = addCard;
+window.deleteCard = deleteCard;
